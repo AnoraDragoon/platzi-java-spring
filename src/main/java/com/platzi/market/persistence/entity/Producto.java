@@ -36,6 +36,10 @@ public class Producto {
         return idProducto;
     }
 
+    public void setIdProducto(Integer idProducto) {
+        this.idProducto = idProducto;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -82,5 +86,13 @@ public class Producto {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }
