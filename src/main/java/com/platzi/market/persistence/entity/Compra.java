@@ -8,8 +8,8 @@ import java.util.List;
 @Table(name = "compras")
 public class Compra {
 
-    @Column(name = "id_compra")
     @Id
+    @Column(name = "id_compra")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idCompra;
 
@@ -29,7 +29,7 @@ public class Compra {
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "producto")
+    @OneToMany(mappedBy = "compra", cascade = {CascadeType.ALL})
     private List<ComprasProducto> productos;
 
 

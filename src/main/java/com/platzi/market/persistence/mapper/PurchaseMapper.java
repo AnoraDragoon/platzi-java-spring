@@ -7,6 +7,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring", uses = {PurchaseItemMapper.class})
 public interface PurchaseMapper {
 
@@ -20,6 +22,8 @@ public interface PurchaseMapper {
             @Mapping(source = "productos", target = "items")
     })
     Purchase toPurchase(Compra compra);
+
+    List<Purchase> toPurchases(List<Compra> compras);
 
     @InheritInverseConfiguration
     @Mapping(target = "cliente", ignore = true)
